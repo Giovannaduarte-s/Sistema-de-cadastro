@@ -42,7 +42,7 @@
                 <td><?php echo $item->preco; ?></td>
                 <td>
                   <button type="button" class="btn btn-light">Editar</button>
-                  <button type="button" class="btn btn-light">Excluir</button>
+                  <a href="del.php?id=<?php echo $item->id ?>" class="btn btn-light">Excluir</a>   
                 </td>
               </tr>
             <?php } ?>

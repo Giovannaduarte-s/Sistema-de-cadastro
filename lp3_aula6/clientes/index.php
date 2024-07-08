@@ -39,8 +39,8 @@
                 <td><?php echo $item->nome; ?></td>
                 <td><?php echo $item->email; ?></td>
                 <td>
-                  <button type="button" class="btn btn-light">Editar</button>
-                  <button type="button" class="btn btn-light">Excluir</button>
+                  <a href="editar.php?id=<?php echo $item->id ?>" class="btn btn-light">Adicionar</a>
+                  <a href="del.php?id=<?php echo $item->id ?>" class="btn btn-light">Excluir</a>
                 </td>
               </tr>
             <?php } ?>
@@ -53,6 +53,20 @@
 
   </div>
   <?php include "../includes/js.php";?>
+  <!-- Início - Js para exclusão -->
+  <script>
+    function delete(id) {
+      if(confirm("Tem certeza?")){
+        window.location.href = "del.php?id=" + id;
+
+      }
+
+    }
+
+    
+  </script>
+  <!-- Fim - Js para exclusão -->
+
 </body>
 
 </html>
