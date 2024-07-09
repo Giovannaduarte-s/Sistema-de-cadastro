@@ -10,4 +10,3 @@ include '../includes/conexao.php';
 $conexao->query($sql);
 
 header("location: index.php");
-?>

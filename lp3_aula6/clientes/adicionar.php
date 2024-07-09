@@ -9,41 +9,25 @@
   <div class="container">
     <h3>Sistema XYZ</h3>
     <div class="row">
-      <div class="col-3 menu">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Clientes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Produtos</a>
-          </li>
-        </ul>
-      </div>
+      <?php include "../includes/menu.php"; ?>
       <div class="col-9 dados">
         <h4>Lista de Clientes</h4>
         <form action="add.php" method="post">
           <div class="mb-3">
             <label for="idname" class="form-label">Nome</label>
-            <input type="text" name="campoName" class="form-control" id="idname"
-              placeholder="Seu nome">
+            <input type="text" name="campoName" class="form-control" id="idname" placeholder="Seu nome">
           </div>
           <div class="mb-3">
             <label for="iddate" class="form-label">Data de Nascimento</label>
-            <input type="date" name="campoDate" class="form-control" id="iddate"
-              placeholder="Seu data de nascimento">
+            <input type="date" name="campoDate" class="form-control" id="iddate" placeholder="Sua data de nascimento">
           </div>
           <div class="mb-3">
             <label for="idemail" class="form-label">Email</label>
-            <input type="email" name="campoEmail" class="form-control" id="idemail"
-              placeholder="name@example.com">
+            <input type="email" name="campoEmail" class="form-control" id="idemail" placeholder="name@example.com">
           </div>
           <div class="mb-3">
             <label for="idcpf" class="form-label">CPF</label>
-            <input type="text" name="campoCpf" class="form-control" id="idcpf"
-              placeholder="999999999-99">
+            <input type="text" name="campoCpf" class="form-control" id="idcpf" placeholder="999999999-99">
           </div>
           <label class="form-label">Sexo</label>
           <div class="form-check">

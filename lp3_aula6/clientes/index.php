@@ -28,6 +28,10 @@ mysqli_close($conexao);
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
                 <th scope="col">E-mail</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Data de Nascimento</th>
+                <th scope="col">Sexo</th>
+                <th scope="col">Obsrvações</th>
                 <th scope="col">Ações</th>
               </tr>
             </thead>
@@ -38,6 +42,10 @@ mysqli_close($conexao);
                   <th scope="row"><?php echo $item->id; ?></th>
                   <td><?php echo $item->nome; ?></td>
                   <td><?php echo $item->email; ?></td>
+                  <td><?php echo $item->cpf; ?></td>
+                  <td><?php echo $item->data;?></td>
+                  <td><?php if($item->sexo==1){echo "Masculino";} else{echo "Feminino";} ?></td>
+                  <td><?php echo $item->obs; ?></td>
                   <td>
                     <a href="editar.php?id=<?php echo $item->id ?>" class="btn btn-light">Editar</a>
                     <a href="javascript:excluir(<?php echo $item->id ?>)" class="btn btn-light">Excluir</a>

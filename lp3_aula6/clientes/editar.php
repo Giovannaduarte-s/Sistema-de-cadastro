@@ -2,7 +2,7 @@
 // Pega ID na URL
 $id = $_GET['id'];
 // Constroi String com código SQL
-$sql = "select * from produtos where id = '$id'; ";
+$sql = "select * from clientes where id = '$id'; ";
 // Inclui a conexão com o Banco de Dados
 include '../includes/conexao.php';
 // Executa String $SQL no Banco de Dados
@@ -42,18 +42,35 @@ $item = mysqli_fetch_object($resultado)
 
           <div class="mb-3">
             <label for="idname" class="form-label">Nome</label>
-            <input type="text" name="campoName" class="form-control" id="idname" value="<?php echo $item->nome; ?>"
-              placeholder="Nome do Produto">
+            <input type="text" name="campoName" class="form-control" id="idname" value="<?php echo $item->nome; ?>">
           </div>
           <div class="mb-3">
-            <label for="idcategoria" class="form-label">Categoria</label>
-            <input type="text" name="campoCategoria" class="form-control" id="idcategoria"
-              value="<?php echo $item->categoria; ?>" placeholder="Alimentício">
+            <label for="idcpf" class="form-label">CPF</label>
+            <input type="text" name="campoCpf" class="form-control" id="idcpf" value="<?php echo $item->cpf; ?>">
+          <div class="mb-3">
+            <label for="idemail" class="form-label">Email:</label>
+            <input type="e-mail" name="campoEmail" class="form-control" id="idemail" value="<?php echo $item->email; ?>">
           </div>
           <div class="mb-3">
-            <label for="idpreco" class="form-label">Preço</label>
-            <input type="text" name="campoPreco" class="form-control" id="idpreco" value="<?php echo $item->preco
-            ; ?>" placeholder="Preço">
+            <label for="iddate" class="form-label">Data de Nascimento</label>
+            <input type="date" name="campoDate" class="form-control" id="iddate" value="<?php echo $item->data; ?>">
+          </div>
+          <label class="form-label">Sexo</label>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="campoSexo" id="idsexom" value="1" <?php if($item->sexo==1){echo "checked";} ?>>
+            <label class="form-check-label" for="idsexom">
+              Masculino
+            </label>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="radio" name="campoSexo" id="idsexof" value="0" <?php if($item->sexo==0){echo "checked";} ?>>
+            <label class="form-check-label" for="idsexof">
+              Feminino
+            </label>
+          </div>
+          <div class="mb-3">
+            <label for="idobservação" class="form-label">Observação</label>
+            <textarea class="form-control" name="campoObservação" id="idobservação" rows="3"></textarea>
           </div>
           <button type="submit" class="btn btn-light mb-3">Gravar</button>
           <a href="./" class="btn btn-light mb-3">Voltar</a>

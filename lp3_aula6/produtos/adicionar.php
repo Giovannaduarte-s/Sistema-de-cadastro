@@ -27,18 +27,15 @@
         <form action="add.php" method="post">
           <div class="mb-3">
             <label for="idname" class="form-label">Nome</label>
-            <input type="text" name="campoName" class="form-control" id="idname"
-              placeholder="Nome do Produto">
+            <input type="text" name="campoName" class="form-control" id="idname" placeholder="Nome do Produto">
           </div>
           <div class="mb-3">
             <label for="idcategoria" class="form-label">Categoria</label>
-            <input type="text" name="campoCategoria" class="form-control" id="idcategoria"
-              placeholder="Alimentício">
+            <input type="text" name="campoCategoria" class="form-control" id="idcategoria" placeholder="Alimentício">
           </div>
           <div class="mb-3">
             <label for="idpreco" class="form-label">Preço</label>
-            <input type="text" name="campoPreco" class="form-control" id="idpreco"
-              placeholder="Preço">
+            <input type="text" name="campoPreco" class="form-control" id="idpreco" placeholder="Preço">
           </div>
           <button type="submit" class="btn btn-light mb-3">Gravar</button>
           <a href="./" class="btn btn-light mb-3">Voltar</a>

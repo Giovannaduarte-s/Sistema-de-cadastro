@@ -1,6 +1,5 @@
 <?php
 
-
 $id = $_GET['id'];
 
 $sql = "delete from clientes where id='$id'";
