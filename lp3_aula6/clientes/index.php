@@ -1,9 +1,9 @@
 <?php
-  include "../includes/conexao.php";
-  $sql = "select * from clientes";
+include "../includes/conexao.php";
+$sql = "select * from clientes";
 
-  $resultado = $conexao->query($sql);
-  mysqli_close($conexao);
+$resultado = $conexao->query($sql);
+mysqli_close($conexao);
 ?>
 
 <!DOCTYPE html>
@@ -33,39 +33,36 @@
             </thead>
             <tbody>
 
-            <?php while ($item = mysqli_fetch_object($resultado)) { ?>
-              <tr>
-                <th scope="row"><?php echo $item->id; ?></th>
-                <td><?php echo $item->nome; ?></td>
-                <td><?php echo $item->email; ?></td>
-                <td>
-                  <a href="editar.php?id=<?php echo $item->id ?>" class="btn btn-light">Adicionar</a>
-                  <a href="del.php?id=<?php echo $item->id ?>" class="btn btn-light">Excluir</a>
-                </td>
-              </tr>
-            <?php } ?>
+              <?php while ($item = mysqli_fetch_object($resultado)) { ?>
+                <tr>
+                  <th scope="row"><?php echo $item->id; ?></th>
+                  <td><?php echo $item->nome; ?></td>
+                  <td><?php echo $item->email; ?></td>
+                  <td>
+                    <a href="editar.php?id=<?php echo $item->id ?>" class="btn btn-light">Editar</a>
+                    <a href="javascript:excluir(<?php echo $item->id ?>)" class="btn btn-light">Excluir</a>
+                  </td>
+                </tr>
+              <?php } ?>
             </tbody>
           </table>
 
         </div>
 
-    </div>
+      </div>
 
-  </div>
-  <?php include "../includes/js.php";?>
-  <!-- Início - Js para exclusão -->
-  <script>
-    function delete(id) {
-      if(confirm("Tem certeza?")){
-        window.location.href = "del.php?id=" + id;
+    </div>
+    <?php include "../includes/js.php"; ?>
+    <!-- Início - Js para exclusão -->
+    <script>
+      function excluir(id) {
+        if (confirm("Tem certeza?")) {
+          window.location.href = "del.php?id=" + id;
+        }
 
       }
-
-    }
-
-    
-  </script>
-  <!-- Fim - Js para exclusão -->
+    </script>
+    <!-- Fim - Js para exclusão -->
 
 </body>
 

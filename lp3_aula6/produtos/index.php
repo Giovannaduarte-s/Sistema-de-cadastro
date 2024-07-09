@@ -41,8 +41,8 @@
                 <td><?php echo $item->categoria; ?></td>
                 <td><?php echo $item->preco; ?></td>
                 <td>
-                  <button type="button" class="btn btn-light">Editar</button>
-                  <a href="del.php?id=<?php echo $item->id ?>" class="btn btn-light">Excluir</a>   
+                  <a href="editar.php?id=<?php echo $item->id ?>" class="btn btn-light">Editar</a>
+                  <a href="javascript:excluir(<?php echo $item->id ?>)" class="btn btn-light">Excluir</a>
                 </td>
               </tr>
             <?php } ?>
@@ -55,6 +55,16 @@
 
   </div>
   <?php include "../includes/js.php";?>
+  <!-- Início - Js para exclusão -->
+  <script>
+      function excluir(id) {
+        if (confirm("Tem certeza?")) {
+          window.location.href = "del.php?id=" + id;
+        }
+
+      }
+    </script>
+    <!-- Fim - Js para exclusão -->
 </body>
 
 </html>
