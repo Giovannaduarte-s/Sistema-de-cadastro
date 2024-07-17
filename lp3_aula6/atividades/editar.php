@@ -2,7 +2,7 @@
 // Pega ID na URL
 $id = $_GET['id'];
 // Constroi String com código SQL
-$sql = "select * from clientes where id = '$id'; ";
+$sql = "select * from atividades where id = '$id'; ";
 // Inclui a conexão com o Banco de Dados
 include '../includes/conexao.php';
 // Executa String $SQL no Banco de Dados
@@ -35,7 +35,7 @@ $item = mysqli_fetch_object($resultado)
         </ul>
       </div>
       <div class="col-9 dados">
-        <h4>Lista de Clientes</h4>
+        <h4>Lista de Atividades</h4>
         <form action="edit.php" method="post">
 
           <input type="hidden" name="campoId" value="<?php echo $id; ?>">
@@ -45,39 +45,35 @@ $item = mysqli_fetch_object($resultado)
             <input type="text" name="campoName" class="form-control" id="idname" value="<?php echo $item->nome; ?>">
           </div>
           <div class="mb-3">
-            <label for="idcpf" class="form-label">CPF</label>
-            <input type="text" name="campoCpf" class="form-control" id="idcpf" value="<?php echo $item->cpf; ?>">
-          <div class="mb-3">
-            <label for="idemail" class="form-label">Email:</label>
-            <input type="e-mail" name="campoEmail" class="form-control" id="idemail" value="<?php echo $item->email; ?>">
+            <label for="idhora_inicio" class="form-label">Hora de ínicio</label>
+            <input type="time" name="campoHora_inicial" class="form-control" id="idhora_inicio" value="<?php echo $item->hora_inicio; ?>">
           </div>
           <div class="mb-3">
-            <label for="iddate" class="form-label">Data de Nascimento</label>
-            <input type="date" name="campoDate" class="form-control" id="iddate" value="<?php echo $item->data; ?>">
+            <label for="idhora_final" class="form-label">Hora do Término</label>
+            <input type="time" name="campoHora_final" class="form-control" id="idhora_final" value="<?php echo $item->hora_final; ?>">
           </div>
-          <label class="form-label">Sexo</label>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="campoSexo" id="idsexom" value="1" <?php if($item->sexo==1){echo "checked";} ?> >
-            <label class="form-check-label" for="idsexom">
-              Masculino
-            </label>
-          </div>
-          <div class="form-check mb-3">
-            <input class="form-check-input" type="radio" name="campoSexo" id="idsexof" value="0" <?php if($item->sexo==0){echo "checked";} ?> >
-            <label class="form-check-label" for="idsexof">
-              Feminino
-            </label>
+          <div class="mb-3 w-50">
+            <label for="idturno" class="form-label">Turno</label>
+            <select class="form-select border border-primary" id="idturno" name="campoTurno">
+              <option selected disabled>Turno</option>
+              <option value="0"<?php if($item->turno==0){echo "selected";} ?>>Matutino</option>
+              <option value="1"<?php if($item->turno==1){echo "selected";} ?>>Vespertino</option>
+              <option value="2"<?php if($item->turno==2){echo "selected";} ?>>Noturno</option>
+            </select>
           </div>
           <div class="mb-3">
-            <label for="idobservação" class="form-label">Observação</label>
-            <textarea class="form-control" name="campoObservação" id="idobservação" rows="3"></textarea>
+            <label for="idnumero" class="form-label">Quantidade de pessoas:</label>
+            <input type="text" name="campoNumero" class="form-control" id="idnumero" value="<?php echo $item->numero; ?>">
+          </div>
+          <div class="mb-3 w-50">
+            <label for="iddescricao" class="form-label">Descrição:</label>
+            <textarea name="campoDescricao" class="form-control border border-primary" id="iddescricao" rows="3"><?php echo $item->descricao; ?></textarea>
           </div>
           <button type="submit" class="btn btn-light mb-3">Gravar</button>
           <a href="./" class="btn btn-light mb-3">Voltar</a>
         </form>
       </div>
     </div>
-
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

@@ -9,5 +9,14 @@
         <li class="nav-item">
             <a class="nav-link" href="../produtos">Produtos</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../atividades">Atividades</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../participantes">Participantes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../videos">Videos</a>
+        </li>
     </ul>
 </div>
